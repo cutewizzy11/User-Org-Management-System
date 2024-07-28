@@ -1,16 +1,18 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using UserOrgManagementSystem.Models;
 
 namespace UserOrgManagementSystem.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Organization> Organizations { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Organisation> Organisations { get; set; }
     }
 }
